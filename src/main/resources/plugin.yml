@@ -1,0 +1,5 @@
+main: fun.fifu.simplebloodvolumedisplay.SimpleBloodVolumeDisplay
+version: 1.0
+name: SimpleBloodVolumeDisplay
+author: NekokeCore
+api-version: 1.16
