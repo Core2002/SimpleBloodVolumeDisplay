@@ -8,6 +8,7 @@ import org.bukkit.entity.Projectile
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDamageByEntityEvent
+import org.bukkit.event.player.PlayerInteractEntityEvent
 import org.bukkit.scheduler.BukkitRunnable
 
 /**
@@ -35,6 +36,17 @@ class EntityListener : Listener {
                 }
             }
         }
+    }
+
+    /**
+     * 交互实体时触发
+     * 显血
+     * @param event
+     */
+    @EventHandler
+    fun onPlayerInteractEntity(event: PlayerInteractEntityEvent) {
+        val entity: Entity = event.rightClicked
+        if (entity is LivingEntity) entity.showDamage(event.player)
     }
 
     /**
